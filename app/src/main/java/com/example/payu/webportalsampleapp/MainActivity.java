@@ -22,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String url = "https://test.payu.in/_payment";//for testing
-//    private String url = "https://secure.payu.in/_payment";//for production
+//  private String url = "https://secure.payu.in/_payment";//for production
+
     //Mandatory feilds for hash generation
-//    private static String key = "0MQaQP";//for test production,will work only at PayU only
+//  private static String key = "0MQaQP";//for test production,will work only at PayU only
     private static String key = "gtKFFx"; //for testing
     private static String transaction_Id;
     private static String amount = "10.00 ";
@@ -146,6 +147,13 @@ public class MainActivity extends AppCompatActivity {
         return key + "=" + value + "&";
     }
 
+
+
+/**
+ *
+ * This Asyntask will hit API to get all hashes from server.
+ *
+ * */
  class GetHashesFromServerTask extends AsyncTask<String, String, String> {
 
 
@@ -162,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
          try {
 
 
-             URL url = new URL("https://payu.herokuapp.com/get_hash");
+             URL url = new URL("https://payu.herokuapp.com/get_hash");//replace this url with your server url for hahs generation
 
              // get the payuConfig first
              String postParam = postParams[0];
@@ -213,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //Control will come back to this  place when transaction completed(for both fail and success)
         if (requestCode == 100) {
             if (resultCode == RESULT_OK) {
 //success
