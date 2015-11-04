@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+ <head>
+ 	  <!-- Google's crypto js for sha 512 -->
+	  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
+ </head>
+
+ <body>
+ 
+  <script language="javascript">
+  
+  function make_payment(){
+	  var payu_params = {};
+	  /* payu_params.key = "0MQaQP";
+	  payu_params.amount = "1.0";
+	  payu_params.productinfo = "myproduct";
+	  payu_params.firstname = "firstname";
+	  payu_params.email = "me@itsmeonly.com";
+	  payu_params.txnid = Math.floor(Math.random() * 100000000000); // txnid. (should be unique for every transaction)
+	  payu_params.surl = encodeURI("https://payu.herokuapp.com/success"); // url needs to be encoded
+	  payu_params.furl = encodeURI("https://payu.herokuapp.com/failure"); // url needs to be encoded
+	  payu_params.user_credentials = "key:unique_id";
+	  payu_params.udf1 = "udf1";
+	  payu_params.udf2 = "udf2";
+	  payu_params.udf3 = "udf3";
+	  payu_params.udf4 = "udf4";
+	  payu_params.udf5 = "udf5"; */
+	  
+	  
+	  payu_params.key=checkEmptyValue(document.getElementById("key").value);
+	  payu_params.salt=checkEmptyValue(document.getElementById("salt").value);
+	  payu_params.txnid=checkEmptyValue(document.getElementById("txnid").value);
+	  payu_params.amount=checkEmptyValue(document.getElementById("amount").value);
+	  payu_params.productinfo=checkEmptyValue(document.getElementById("productinfo").value);
+	  payu_params.firstname=checkEmptyValue(document.getElementById("firstname").value);
+	  payu_params.email=checkEmptyValue(document.getElementById("email").value);
+	  payu_params.user_credentials=checkEmptyValue(document.getElementById("user_credentials").value);
+	  payu_params.udf1=checkEmptyValue(document.getElementById("udf1").value);
+	  payu_params.udf2=checkEmptyValue(document.getElementById("udf2").value);
+	  payu_params.udf3=checkEmptyValue(document.getElementById("udf3").value);
+	  payu_params.udf4=checkEmptyValue(document.getElementById("udf4").value);
+	  payu_params.udf5=checkEmptyValue(document.getElementById("udf5").value);
+	  payu_params.offer_key=checkEmptyValue(document.getElementById("offer_key").value);
+	  payu_params.card_bin=checkEmptyValue(document.getElementById("card_bin").value);
+	  payu_params.surl = encodeURI("https://payu.herokuapp.com/success"); // url needs to be encoded
+	  payu_params.furl = encodeURI("https://payu.herokuapp.com/failure"); // url needs to be encoded
+	  
+	  function checkEmptyValue(str)
+	  {
+	      var value=str.trim();
+	       if(value.length == 0 ||value == null || value =='undefined' || value=="" ){
+	          return "";
+	      }else{
+	          return value;
+	      }
+	  }
+	  
+	 /*  var hash_string =   payu_params.key+"|"+payu_params.txnid+"|"+payu_params.amount+"|"+
+	  payu_params.productinfo+"|"+payu_params.firstname+"|"+payu_params.email+"|"+payu_params.udf1+"|"
+	  +payu_params.udf2+"|"+payu_params.udf3+"|"+payu_params.udf4+"|"+payu_params.udf5+"||||||13p0PXZk"; */
+	  
+	  var hash_string =   payu_params.key+"|"+payu_params.txnid+"|"+payu_params.amount+"|"+
+	  payu_params.productinfo+"|"+payu_params.firstname+"|"+
+	  payu_params.email+"|"+payu_params.udf1+"|"+payu_params.udf2+"|"+
+	  payu_params.udf3+"|"+payu_params.udf4+"|"+payu_params.udf5+"||||||"+payu_params.salt;
+	  
+	  console.log("HashString = "+hash_string);
+	  
+	  payu_params.hash = CryptoJS.SHA512(hash_string).toString(CryptoJS.enc.Base64);
+	  
+	  console.log("Hash = "+payu_params.hash);
+	  
+	  var payu_params_string = '';
+	  for (var key in payu_params) {
+		  payu_params_string += key + "=" + payu_params[key] + "&";
+	  }
+
+	  // trim last character (&)
+	  payu_params_string = payu_params_string.slice(0,-1);
+	  
+	  // javascript interface call. 
+	  PayU.onResponse(payu_params_string);
+	  
+	  
+	 /*  alert('key='+payu_params.key+'&salt='+payu_params.salt+'&txnid='+payu_params.txnid+'&amount='+payu_params.amount+'&productinfo='+
+			  payu_params.productinfo+'&firstname='+payu_params.firstname+'&email='+payu_params.email+'&user_credentials='+payu_params.user_credentials+
+             '&udf1='+payu_params.udf1+'&udf2='+payu_params.udf2+'&udf3='+payu_params.udf3+'&udf4='+payu_params.udf4+'&udf5='+payu_params.udf5+'&offer_key='+payu_params.offer_key+'&card_bin='+payu_params.card_bin);
+ */
+  }
+
+  </script>
+
+	<!-- <input type="button" onClick="make_payment()" value="Make Payment"> -->
+	
+	<div>
+           
+                           <table >
+                           
+                              <tr>
+                                 <td>key:</td>
+                                 <td><input   type="text" name="key" id="key"  value="gtKFFx"  required /></td>
+                              </tr>
+                              <tr>
+                                 <td>salt:</td>
+                                 <td><input   type="text" name="salt" id="salt"  value="eCwWELxi" required /></td>
+                              </tr>
+                              <tr>
+                                 <td>txnid:</td>
+                                 <td><input   type="text" name="txnid" id="txnid"  value="" required /></td>
+                              </tr>
+
+                              <tr>
+                                 <td>amount:</td>
+                                 <td><input   type="text" name="amount" id="amount"  value="4" required /></td>
+                              </tr>
+                              <tr>
+                                 <td>productinfo:</td>
+                                 <td><input   type="text" name="productinfo" id="productinfo"  value="productinfo"  required /></td>
+                              </tr>   
+                              <tr>
+                                 <td>firstname:</td>
+                                 <td><input   type="text" name="firstname" id="firstname" value="guru"   required /></td>
+                              </tr>   
+                              <tr>
+                                 <td>email:</td>
+                                 <td><input   type="text" name="email" id="email" value="guru@guru.com"   required /></td>
+                              </tr>   
+                              <tr>
+                                 <td>user_credentials:</td>
+                                 <td><input   type="text" name="user_credentials" id="user_credentials"  value="0MQaQP:unique_id" required /></td>
+                              </tr>   
+                              <tr>
+                                 <td>udf1(optional):</td>
+                                 <td><input   type="text" name="udf1" id="udf1"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>udf2(optional):</td>
+                                 <td><input   type="text" name="udf2" id="udf2"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>udf3(optional):</td>
+                                 <td><input   type="text" name="udf3" id="udf3"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>udf4(optional):</td>
+                                 <td><input   type="text" name="udf4" id="udf4"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>udf5(optional):</td>
+                                 <td><input   type="text" name="udf5" id="udf5"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>offer_key(optional):</td>
+                                 <td><input   type="text" name="offer_key" id="offer_key"    /></td>
+                              </tr>   
+                              <tr>
+                                 <td>card_bin(optional):</td>
+                                 <td><input   type="text" name="card_bin" id="card_bin"    /></td>
+                              </tr>  
+                              <tr>
+                                 <td></td>
+                                 <td><input type="button" onClick="make_payment()" value="Make Payment"></td>
+                                 </tr>
+
+                           </table>
+               
+           
+         </div>
+	
+<script>
+document.getElementById("txnid").value="qw"+Math.floor(Math.random() * 100000000000);
+</script>
+ </body>
+
+</html>
