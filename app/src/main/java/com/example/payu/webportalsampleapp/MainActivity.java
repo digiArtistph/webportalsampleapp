@@ -109,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
                 "&email="+email +
                 "&phone="+phone +
                 "&amount="+amount +
+                /*"&bankcode=PAYUW" + //for Payu Money wallet
+                "&pg=WALLET"+  //for Payu Money wallet
+                */
                 "&hash=";
         generateHashFromServer();
     }
