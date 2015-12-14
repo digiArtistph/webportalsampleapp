@@ -70,7 +70,7 @@ public class MainActivity extends DroidGap {
 	private void initWebView(){
 
 
-		appView.loadUrl("https://payu.herokuapp.com/success");
+		appView.loadUrl("file:///android_asset/afterCompletion.html");
 
 		//here do your stuff
 		
