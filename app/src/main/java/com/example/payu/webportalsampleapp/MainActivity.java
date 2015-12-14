@@ -109,9 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 "&email="+email +
                 "&phone="+phone +
                 "&amount="+amount +
-                /*"&bankcode=PAYUW" + //for Payu Money wallet
-                "&pg=WALLET"+  //for Payu Money wallet
-                */
+//                "&bankcode=PAYUW" + //for PayU Money
+//                "&pg=WALLET"+//for PayU Money
                 "&hash=";
         generateHashFromServer();
     }
@@ -214,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
      protected void onPostExecute(String payment_hash) {
          System.out.println("paymenthash" + payment_hash);
          spinner.setVisibility(View.GONE);
-         Intent intent=new Intent(MainActivity.this,ProcessPaymentActivity.class);
+         Intent intent=new Intent(MainActivity.this,PaymentsActivity.class);
          intent.putExtra("url",url);
          intent.putExtra("postData",postData + payment_hash);
          startActivityForResult(intent, 100);
