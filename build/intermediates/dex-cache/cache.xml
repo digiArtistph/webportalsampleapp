@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-bf7ee7adf656cb300984e1ba3a8af12175a53a6f.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.mixpanel.android/mixpanel-android/4.6.4/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0adb9447509bdd9a674c1c3e7e5ee996247df478">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/classes-05cba5e22a6ecfc1beb657e26af2be0415151d86.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.payu.magicretry/magicretry/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8808da662010d3e63a74734c348da3e9bd9be0e1">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/classes-a103fe109a489514da034fac0536ad9aa709a9b7.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.payu.custombrowser/payu-custom-browser/5.3.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d4686b81f0f4b86248d51a0869e86ec6e6833225">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/classes-e486ea7b606122d878996f0329404251b426a9d6.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/classes-7e292a602062da9f4f902d494849ed08e81d23b6.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-bd284909699d15b7d2829b3e86d13c700f679199.jar" />
+    </item>
+    <item
+        jar="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/guruchetansingh/Personal/git/webportalsampleapp/app/build/intermediates/pre-dexed/debug/classes-c014a8f1178c11fade52d7a79da362fc448c7502.jar" />
+    </item>
+
+</items>
