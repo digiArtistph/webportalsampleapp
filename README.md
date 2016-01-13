@@ -14,3 +14,6 @@ Every transaction (payment or non-payment) needs a hash by the merchant before s
 ￼Payment Hash
 
     sha512(key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5||||||salt)
+
+
+For more information regarding PayU APIs,refer [Integration Document ver2.5](https://drive.google.com/a/payu.in/file/d/0B-2lbJ9wv91JWTdOODl4c25PWHM/view)
