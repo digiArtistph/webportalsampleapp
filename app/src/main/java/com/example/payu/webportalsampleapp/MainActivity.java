@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         transaction_Id=System.currentTimeMillis()+"";
         postData="&txnid="+transaction_Id+
                 "&device_type=1" +
+                "&ismobileview=1"+
                 "&productinfo="+product_info+
                 "&user_credentials="+user_credentials+
                 "&key="+key+
